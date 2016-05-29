@@ -1,0 +1,65 @@
+<div *ngIf="order">
+    <div>
+        <button class="btn btn-default" (click)="goToCustomer(order[0].customer_id)">Go to Customer</button>
+    </div>
+
+
+    <br/>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th colspan="4" id="process-table-header">Process Flow - Current step</th>
+        </tr>
+        </thead>
+        <tbody id="process-table-body">
+        <tr>
+            <td [class.selected]="process1 === order[0].process_step">{{process1}}</td>
+            <td [class.selected]="process2 === order[0].process_step">{{process2}}</td>
+            <td [class.selected]="process3 === order[0].process_step">{{process3}}</td>
+            <td [class.selected]="process4 === order[0].process_step">{{process4}}</td>
+        </tr>
+        <tr></tr>
+        </tbody>
+    </table>
+
+    <br/>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Aditional Info</div>
+                <div class="panel-body">
+                    <table class="additional-info table">
+                        <tbody>
+                        <tr>
+                            <td>Registration Date</td>
+                            <td>{{order[0].reg_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>Agreed Date</td>
+                            <td>{{order[0].agreed_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>Agreed Installation date (original)</td>
+                            <td>{{order[0].agreed_installation_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>Latest Aggreed Installation date</td>
+                            <td>{{order[0].latest_agreed_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>Finalize Access date</td>
+                            <td>{{order[0].finalize_access_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>Information updated</td>
+                            <td>{{order[0].last_update_timestamp}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">&nbsp;</div>
+    </div>
+</div>
