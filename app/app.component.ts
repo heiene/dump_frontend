@@ -25,5 +25,5 @@ import { CustomerComponent } from './customer.component';
     {path: '/customer/:id', name: 'CustomerDetail', component: CustomerComponent}
 ])
 export class AppComponent {
-    title = 'Sporingsapp';
+    title = 'Ordre Sporing';
 }

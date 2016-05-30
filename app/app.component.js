@@ -15,7 +15,7 @@ var order_component_1 = require('./order.component');
 var customer_component_1 = require('./customer.component');
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Sporingsapp';
+        this.title = 'Ordre Sporing';
     }
     AppComponent = __decorate([
         core_1.Component({
