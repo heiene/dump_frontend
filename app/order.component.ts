@@ -11,6 +11,7 @@ import { OrderService }         from './services/order.service';
 export class OrderComponent implements OnInit {
 
     order;
+    error: boolean = false;
     process1    = 'Validation';
     process2    = 'Planning';
     process3    = 'In Execution';
@@ -30,10 +31,17 @@ export class OrderComponent implements OnInit {
 
             this.orderService.getOrder(id).subscribe(
                     data => {
-                        this.order = data.json();
+                        if(data.json().length>0) {
+                            this.error = false;
+                            this.order = data.json();
+                        }
+                        else {
+                            console.log("No Orders returned");
+                            this.error = true;
+                        }
 
                 },
-                    err => console.error(err),
+                    err => console.error('ERROR:',err),
                 () => {
                     console.log('get order completed', this.order);
                 }

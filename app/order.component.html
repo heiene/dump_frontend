@@ -19,7 +19,6 @@
             <td [class.selected]="process4 === order[0].process_step">{{process4}}</td>
             <td [class.selected]="process5 === order[0].process_step">{{process5}}</td>
         </tr>
-        <tr></tr>
         </tbody>
     </table>
 
@@ -44,12 +43,12 @@
                             <td>Registration Date</td>
                             <td>{{order[0].reg_date}}</td>
                         </tr>
-                        <tr *ngIf="order[0].process_step === process3 || order[0].process_step === process4 || order[0].process_step === process5">
+                        <tr *ngIf="order[0].process_step === process3">
                             <td>Installation Date</td>
                             <td>{{order[0].agreed_installation_date}}</td>
                         </tr>
                         <tr *ngIf="order[0].process_step === process3 ||  order[0].process_step === process4">
-                            <td>Agreed Delivery Date</td>
+                            <td>Expected Delivery Date</td>
                             <td>{{order[0].latest_agreed_date}}</td>
                         </tr>
                         <tr *ngIf="order[0].process_step === process5">
@@ -63,4 +62,9 @@
         </div>
         <div class="col-md-6">&nbsp;</div>
     </div>
+</div>
+
+
+<div *ngIf="error">
+    <div class="alert alert-danger" role="alert">No Orders to show. Please check your URL or try to refresh page</div>
 </div>

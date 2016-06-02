@@ -11,6 +11,7 @@ import { OrderService }         from './services/order.service';
 export class CustomerComponent implements OnInit {
 
     customerData;
+    error:boolean = false;
 
     constructor(private orderService:   OrderService,
                 private routeParams:    RouteParams,
@@ -25,9 +26,15 @@ export class CustomerComponent implements OnInit {
 
             this.orderService.getOrdersByCustomerId(id).subscribe(
                     data => {
-                    this.customerData = data.json();
-                        console.log("lengde", this.customerData.length)
-                        console.log("data", this.customerData)
+                        if(data.json().length>0) {
+                            this.error = false;
+                            this.customerData = data.json();
+                            console.log("lengde", this.customerData.length);
+                            console.log("data", this.customerData)
+                        } else {
+                            console.log("Error in getting customer");
+                            this.error = true;
+                        }
                 },
                     err => console.error(err),
                 () => {

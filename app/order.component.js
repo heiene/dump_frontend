@@ -16,6 +16,7 @@ var OrderComponent = (function () {
         this.orderService = orderService;
         this.routeParams = routeParams;
         this.router = router;
+        this.error = false;
         this.process1 = 'Validation';
         this.process2 = 'Planning';
         this.process3 = 'In Execution';
@@ -28,8 +29,15 @@ var OrderComponent = (function () {
             var id = this.routeParams.get('id');
             console.log("getting order for:", id);
             this.orderService.getOrder(id).subscribe(function (data) {
-                _this.order = data.json();
-            }, function (err) { return console.error(err); }, function () {
+                if (data.json().length > 0) {
+                    _this.error = false;
+                    _this.order = data.json();
+                }
+                else {
+                    console.log("No Orders returned");
+                    _this.error = true;
+                }
+            }, function (err) { return console.error('ERROR:', err); }, function () {
                 console.log('get order completed', _this.order);
             });
         }

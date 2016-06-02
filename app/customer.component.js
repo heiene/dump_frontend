@@ -16,6 +16,7 @@ var CustomerComponent = (function () {
         this.orderService = orderService;
         this.routeParams = routeParams;
         this.router = router;
+        this.error = false;
     }
     CustomerComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -23,9 +24,16 @@ var CustomerComponent = (function () {
             var id = this.routeParams.get('id');
             console.log("getting orders for customer:", id);
             this.orderService.getOrdersByCustomerId(id).subscribe(function (data) {
-                _this.customerData = data.json();
-                console.log("lengde", _this.customerData.length);
-                console.log("data", _this.customerData);
+                if (data.json().length > 0) {
+                    _this.error = false;
+                    _this.customerData = data.json();
+                    console.log("lengde", _this.customerData.length);
+                    console.log("data", _this.customerData);
+                }
+                else {
+                    console.log("Error in getting customer");
+                    _this.error = true;
+                }
             }, function (err) { return console.error(err); }, function () {
                 console.log('get customer details completed', JSON.stringify(_this.customerData[0]));
             });
