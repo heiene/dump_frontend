@@ -1,17 +1,21 @@
-<h4 *ngIf="customerData">Current orders: {{customerData.length}}</h4>
-<table class="table table-bordered table-hover">
-    <thead>
-    <tr id="order-table-header">
-        <th>Order Ref</th>
-        <th>Product Name</th>
-        <th>Process step</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let data of customerData" (click)="gotoOrderDetail(data.order_ref)">
-        <td>{{data.order_ref}}</td>
-        <td>{{data.product_name}}</td>
-        <td>{{data.process_step}}</td>
-    </tr>
-    </tbody>
-</table>
+<div *ngIf="customerData">
+    <h4># of orders: {{customerData.length}}</h4>
+    <table class="table table-bordered table-hover" id="order-table">
+        <thead>
+        <tr id="order-table-header">
+            <th>Order Ref</th>
+            <th>End User</th>
+            <th>Product Name</th>
+            <th>Process step</th>
+        </tr>
+        </thead>
+        <tbody id="order-table-body">
+        <tr *ngFor="let data of customerData" (click)="gotoOrderDetail(data.order_ref)">
+            <td>{{data.order_ref}}</td>
+            <td>{{data.end_user}}</td>
+            <td>{{data.product_name}}</td>
+            <td>{{data.process_step}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

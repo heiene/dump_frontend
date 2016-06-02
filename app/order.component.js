@@ -16,10 +16,11 @@ var OrderComponent = (function () {
         this.orderService = orderService;
         this.routeParams = routeParams;
         this.router = router;
-        this.process1 = 'plan & design';
-        this.process2 = 'validate & disp.';
-        this.process3 = 'finalize access';
-        this.process4 = 'complete order';
+        this.process1 = 'Validation';
+        this.process2 = 'Planning';
+        this.process3 = 'In Execution';
+        this.process4 = 'Finalizing';
+        this.process5 = 'Delivered';
     }
     OrderComponent.prototype.ngOnInit = function () {
         var _this = this;

@@ -20,4 +20,8 @@ export class OrderService {
     getOrdersByCustomerId(id) {
         return this.http.get(this.customerUrl+id)
     }
+
+    getLastUpdate() {
+        return this.http.get(this.baseUrl)
+    }
 }

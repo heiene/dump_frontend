@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 
@@ -14,6 +14,9 @@ import { CustomerComponent } from './customer.component';
         <h1 class="navbar-inner">{{title}}</h1>
     </div>
                 <router-outlet></router-outlet>
+                <nav class="navbar navbar-default navbar-fixed-bottom">
+                <div id="footer">Information Updated: {{information}}</div>
+                </nav>
                   `,
     styleUrls: ['./app/app.component.css'],
     directives: [ROUTER_DIRECTIVES],
@@ -24,6 +27,25 @@ import { CustomerComponent } from './customer.component';
     {path: '/order/:id', name: 'OrderDetail', component: OrderComponent},
     {path: '/customer/:id', name: 'CustomerDetail', component: CustomerComponent}
 ])
-export class AppComponent {
+export class AppComponent implements OnInit {
     title = 'Ordre Sporing';
+    information = 'null';
+
+    constructor(private orderService:   OrderService) {}
+
+
+    ngOnInit() {
+
+        this.orderService.getLastUpdate().subscribe(
+                data => {
+                this.information = data._body;
+                console.log("data", this.information)
+            },
+                err => console.error(err),
+            () => {
+                console.log('get lastupdate complete', JSON.stringify(this.information));
+            }
+        );
+
+    }
 }

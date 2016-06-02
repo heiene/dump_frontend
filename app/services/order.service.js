@@ -25,6 +25,9 @@ var OrderService = (function () {
     OrderService.prototype.getOrdersByCustomerId = function (id) {
         return this.http.get(this.customerUrl + id);
     };
+    OrderService.prototype.getLastUpdate = function () {
+        return this.http.get(this.baseUrl);
+    };
     OrderService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

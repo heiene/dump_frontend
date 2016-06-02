@@ -11,10 +11,11 @@ import { OrderService }         from './services/order.service';
 export class OrderComponent implements OnInit {
 
     order;
-    process1    = 'plan & design';
-    process2    = 'validate & disp.';
-    process3    = 'finalize access';
-    process4    = 'complete order';
+    process1    = 'Validation';
+    process2    = 'Planning';
+    process3    = 'In Execution';
+    process4    = 'Finalizing';
+    process5    = 'Delivered';
 
     constructor(private orderService:   OrderService,
                 private routeParams:    RouteParams,
