@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
 
         this.orderService.getLastUpdate().subscribe(
                 data => {
-                this.information = data._body;
+                this.information = data.json().last_update_timestamp;
                 console.log("data", this.information)
             },
                 err => console.error(err),

@@ -14,7 +14,7 @@ require('rxjs/add/operator/toPromise');
 var OrderService = (function () {
     function OrderService(http) {
         this.http = http;
-        this.port = 8585;
+        this.port = 8081;
         this.baseUrl = 'http://localhost:' + this.port + '/';
         this.orderUrl = this.baseUrl + 'order/';
         this.customerUrl = this.baseUrl + 'customer/';

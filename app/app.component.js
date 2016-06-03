@@ -22,7 +22,7 @@ var AppComponent = (function () {
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.orderService.getLastUpdate().subscribe(function (data) {
-            _this.information = data._body;
+            _this.information = data.json().last_update_timestamp;
             console.log("data", _this.information);
         }, function (err) { return console.error(err); }, function () {
             console.log('get lastupdate complete', JSON.stringify(_this.information));

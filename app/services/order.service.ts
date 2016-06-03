@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class OrderService {
 
-    private port        = 8585;
+    private port        = 8081;
     private baseUrl     = 'http://localhost:'+this.port+'/';
     private orderUrl    = this.baseUrl + 'order/';
     private customerUrl = this.baseUrl + 'customer/';
