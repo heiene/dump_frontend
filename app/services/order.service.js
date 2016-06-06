@@ -14,8 +14,17 @@ require('rxjs/add/operator/toPromise');
 var OrderService = (function () {
     function OrderService(http) {
         this.http = http;
-        this.port = 8081;
-        this.baseUrl = 'http://localhost:' + this.port + '/';
+        this.environment = {
+            dev: {
+                baseUrl: 'http://localhost:8081/',
+            },
+            test: {
+                baseUrl: 'http://default-environment.8iwrt3nvuq.eu-west-1.elasticbeanstalk.com/'
+            },
+            prod: {}
+        };
+        //  private port;
+        this.baseUrl = this.environment.dev.baseUrl; //change this to test for AWS
         this.orderUrl = this.baseUrl + 'order/';
         this.customerUrl = this.baseUrl + 'customer/';
     }

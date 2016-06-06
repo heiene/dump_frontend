@@ -52,7 +52,7 @@ var OrderComponent = (function () {
     OrderComponent = __decorate([
         core_1.Component({
             selector: 'order-detail',
-            templateUrl: 'app/order.component.html',
+            templateUrl: 'app/order.component_alt.html',
             styleUrls: ['app/order.component.css']
         }), 
         __metadata('design:paramtypes', [order_service_1.OrderService, router_deprecated_1.RouteParams, router_deprecated_1.Router])

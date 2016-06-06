@@ -6,8 +6,20 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class OrderService {
 
-    private port        = 8081;
-    private baseUrl     = 'http://localhost:'+this.port+'/';
+    private environment = {
+        dev:{
+            baseUrl: 'http://localhost:8081/',
+        },
+        test: {
+            baseUrl: 'http://default-environment.8iwrt3nvuq.eu-west-1.elasticbeanstalk.com/'
+        },
+        prod: {
+
+        }
+    };
+
+  //  private port;
+    private baseUrl     = this.environment.dev.baseUrl; //change this to test for AWS
     private orderUrl    = this.baseUrl + 'order/';
     private customerUrl = this.baseUrl + 'customer/';
 

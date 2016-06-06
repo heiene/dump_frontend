@@ -1,0 +1,124 @@
+<div *ngIf="order">
+    <div>
+        <button class="btn btn-default" (click)="goToCustomer(order[0].customer_id)">View all orders for customer</button>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="process-table-header">Process Flow - Current step</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-1 "></div>
+                        <div class="col-md-2 process-step"></div>
+                        <div class="col-md-2 process-step"></div>
+                        <div class="col-md-2 process-step"></div>
+                        <div class="col-md-2 process-step"></div>
+                        <div class="col-md-2 process-step"></div>
+                        <div class="col-md-1 "></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-1 date-step"></div>
+                        <div class="col-md-1 process-step"></div>
+                        <div class="col-md-1 date-step"></div>
+                        <div class="col-md-1 process-step"></div>
+                        <div class="col-md-1 date-step"></div>
+                        <div class="col-md-1 process-step"></div>
+                        <div class="col-md-1 date-step"></div>
+                        <div class="col-md-1 process-step"></div>
+                        <div class="col-md-1 date-step"></div>
+                        <div class="col-md-1 process-step"></div>
+                        <div class="col-md-1 "></div>
+                        <div class="col-md-1 "></div>
+                    </div>
+
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th colspan="5" id="prssocess-table-header">Process Flow - Current step</th>
+                        </tr>
+                        </thead>
+                        <tbody id="proscess-table-body">
+                        <tr>
+                            <td [class.selected]="process1 === order[0].process_step">{{process1}}</td>
+                            <td [class.selected]="process2 === order[0].process_step">{{process2}}</td>
+                            <td [class.selected]="process3 === order[0].process_step">{{process3}}</td>
+                            <td [class.selected]="process4 === order[0].process_step">{{process4}}</td>
+                            <td [class.selected]="process5 === order[0].process_step">{{process5}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br/>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th colspan="5" id="prsocess-table-header">Process Flow - Current step</th>
+        </tr>
+        </thead>
+        <tbody id="process-table-body">
+        <tr>
+            <td [class.selected]="process1 === order[0].process_step">{{process1}}</td>
+            <td [class.selected]="process2 === order[0].process_step">{{process2}}</td>
+            <td [class.selected]="process3 === order[0].process_step">{{process3}}</td>
+            <td [class.selected]="process4 === order[0].process_step">{{process4}}</td>
+            <td [class.selected]="process5 === order[0].process_step">{{process5}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br/>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Aditional Info</div>
+                <div class="panel-body">
+                    <table class="additional-info table">
+                        <tbody>
+                        <tr>
+                            <td>End User</td>
+                            <td>{{order[0].end_user}}</td>
+                        </tr>
+                        <tr>
+                            <td>Product Name</td>
+                            <td>{{order[0].product_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Registration Date</td>
+                            <td>{{order[0].reg_date}}</td>
+                        </tr>
+                        <tr *ngIf="order[0].process_step === process3">
+                            <td>Installation Date</td>
+                            <td>{{order[0].agreed_installation_date}}</td>
+                        </tr>
+                        <tr *ngIf="order[0].process_step === process3 ||  order[0].process_step === process4">
+                            <td>Expected Delivery Date</td>
+                            <td>{{order[0].latest_agreed_date}}</td>
+                        </tr>
+                        <tr *ngIf="order[0].process_step === process5">
+                            <td>Delivered Date</td>
+                            <td>{{order[0].FM_date}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">&nbsp;</div>
+    </div>
+</div>
+
+
+<div *ngIf="error">
+    <div class="alert alert-danger" role="alert">No Orders to show. Please check your URL or try to refresh page</div>
+</div>

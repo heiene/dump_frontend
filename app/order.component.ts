@@ -4,7 +4,7 @@ import { OrderService }         from './services/order.service';
 
 @Component({
     selector: 'order-detail',
-    templateUrl: 'app/order.component.html',
+    templateUrl: 'app/order.component_alt.html',
     styleUrls: ['app/order.component.css']
 
 })
