@@ -13,6 +13,7 @@ var router_deprecated_1 = require('@angular/router-deprecated');
 var order_service_1 = require('./services/order.service');
 var order_component_1 = require('./order.component');
 var customer_component_1 = require('./customer.component');
+var search_component_1 = require('./search.component');
 var AppComponent = (function () {
     function AppComponent(orderService) {
         this.orderService = orderService;
@@ -38,6 +39,7 @@ var AppComponent = (function () {
                 router_deprecated_1.ROUTER_PROVIDERS]
         }),
         router_deprecated_1.RouteConfig([
+            { path: '/', name: 'SearchOrder', component: search_component_1.SearchComponent },
             { path: '/order/:id', name: 'OrderDetail', component: order_component_1.OrderComponent },
             { path: '/customer/:id', name: 'CustomerDetail', component: customer_component_1.CustomerComponent }
         ]), 

@@ -5,6 +5,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 import { OrderService } from './services/order.service';
 import { OrderComponent } from './order.component';
 import { CustomerComponent } from './customer.component';
+import { SearchComponent } from './search.component';
 
 @Component({
     selector: 'order-app',
@@ -24,6 +25,7 @@ import { CustomerComponent } from './customer.component';
                 ROUTER_PROVIDERS]
 })
 @RouteConfig([
+    {path: '/', name: 'SearchOrder', component: SearchComponent},
     {path: '/order/:id', name: 'OrderDetail', component: OrderComponent},
     {path: '/customer/:id', name: 'CustomerDetail', component: CustomerComponent}
 ])
