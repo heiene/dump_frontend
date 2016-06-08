@@ -1,3 +1,8 @@
+#order-body{
+    padding-left: 20em;
+    padding-right: 20em;
+}
+
 .btn{
     font-weight: bold;
     color: darkgrey;
@@ -19,17 +24,30 @@
     text-align: center;
 }
 
+#process-row{
+    padding-left: 5em;
+}
+
 .process-step {
-    border: dotted pink 1px;
-    height: 50px;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
+    border: 1px solid lightgrey;
+    height: 8em;
+    min-height: 8em;
+    line-height: 8em;
+    border-radius: 50%;
+    text-align: center;
+    color: darkgrey;
+    min-width: 8em;
 }
 
 .date-step {
-    border: dotted blue 1px;
-    height: 50px;
+    background: white;
+    height: 8em;
+    min-height: 8em;
+    line-height: 8em;
+    color: grey;
+    font-style: italic;
+    min-width: 7em;
+
 }
 
 

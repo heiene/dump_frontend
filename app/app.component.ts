@@ -11,8 +11,8 @@ import { SearchComponent } from './search.component';
     selector: 'order-app',
     template:  `
     <div class="navbar">
-    <img src="/img/bn_logo.png" alt="" class="pull-right" style="height: 50px; margin: 20px;"/>
-        <h1 class="navbar-inner">{{title}}</h1>
+    <img src="/img/bn_logo.png" alt="" class="pull-right" id="BN-logo" />
+        <h2 class="navbar-inner">{{title}}</h2>
     </div>
                 <router-outlet></router-outlet>
                 <nav class="navbar navbar-default navbar-fixed-bottom">

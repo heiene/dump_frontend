@@ -32,7 +32,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'order-app',
-            template: "\n    <div class=\"navbar\">\n    <img src=\"/img/bn_logo.png\" alt=\"\" class=\"pull-right\" style=\"height: 50px; margin: 20px;\"/>\n        <h1 class=\"navbar-inner\">{{title}}</h1>\n    </div>\n                <router-outlet></router-outlet>\n                <nav class=\"navbar navbar-default navbar-fixed-bottom\">\n                <div id=\"footer\">Information Updated: {{information}}</div>\n                </nav>\n                  ",
+            template: "\n    <div class=\"navbar\">\n    <img src=\"/img/bn_logo.png\" alt=\"\" class=\"pull-right\" id=\"BN-logo\" />\n        <h2 class=\"navbar-inner\">{{title}}</h2>\n    </div>\n                <router-outlet></router-outlet>\n                <nav class=\"navbar navbar-default navbar-fixed-bottom\">\n                <div id=\"footer\">Information Updated: {{information}}</div>\n                </nav>\n                  ",
             styleUrls: ['./app/app.component.css'],
             directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [order_service_1.OrderService,

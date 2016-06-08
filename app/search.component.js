@@ -10,14 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var order_service_1 = require('./services/order.service');
 var SearchComponent = (function () {
-    function SearchComponent(orderService, router) {
-        this.orderService = orderService;
+    function SearchComponent(router) {
         this.router = router;
     }
-    SearchComponent.prototype.ngOnInit = function () {
-    };
     SearchComponent.prototype.goToCustomer = function () {
         if (!this.orderId) {
             alert('enter order id');
@@ -33,7 +29,7 @@ var SearchComponent = (function () {
             templateUrl: 'app/search.component.html',
             styleUrls: ['app/search.component.css']
         }), 
-        __metadata('design:paramtypes', [order_service_1.OrderService, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [router_deprecated_1.Router])
     ], SearchComponent);
     return SearchComponent;
 }());

@@ -1,6 +1,5 @@
-import { Component, OnInit }    from '@angular/core';
-import { RouteParams, Router }  from '@angular/router-deprecated';
-import { OrderService }         from './services/order.service';
+import { Component }    from '@angular/core';
+import {  Router }  from '@angular/router-deprecated';
 
 @Component({
     selector: 'order-search',
@@ -8,16 +7,11 @@ import { OrderService }         from './services/order.service';
     styleUrls: ['app/search.component.css']
 
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent{
 
     orderId: number;
     
-    constructor(private orderService:   OrderService,
-                private router: Router) {
-    }
-
-    ngOnInit() {
-       
+    constructor(private router: Router) {
     }
 
     goToCustomer() {
