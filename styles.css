@@ -1,3 +1,8 @@
 body {
     padding: 20px;
 }
+
+#nav-header {
+    border-bottom: solid 1px #E4281F;
+    border-radius: 0;
+}

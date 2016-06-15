@@ -19,7 +19,7 @@ export class OrderService {
     };
 
   //  private port;
-    private baseUrl     = this.environment.dev.baseUrl; //change this to test for AWS
+    private baseUrl     = this.environment.test.baseUrl; //change this to test for AWS
     private orderUrl    = this.baseUrl + 'order/';
     private customerUrl = this.baseUrl + 'customer/';
 

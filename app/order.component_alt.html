@@ -1,6 +1,7 @@
 <div *ngIf="order" id="order-body">
     <div>
-        <button class="btn btn-default" (click)="goToCustomer(order[0].customer_id)">View all orders for customer</button>
+        <button class="btn btn-default" (click)="goToCustomer(order[0].customer_id)">View all orders for customer
+        </button>
     </div>
 
     <br/>
@@ -8,18 +9,19 @@
 
     <div class="panel panel-default">
         <div class="panel-heading" id="process-table-header">
-            Process Flow - Current step
+            Process Flow for order: <strong>{{order[0].order_ref}}</strong> - Current step
         </div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-2 process-group">
                     <div class="row">
-                            <div class="date-step">
-                                Entered step:<br>
-                                {{order[0].reg_date}}
-                            </div>
-                        <div [class.selected]="process1 === order[0].process_step" class="process-step">{{process1}}</div>
+                        <div class="date-step">
+                            Entered step:<br>
+                            {{order[0].reg_date}}
+                        </div>
+                        <div [class.selected]="process1 === order[0].process_step" class="process-step">{{process1}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,13 +29,14 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-2 process-group">
                     <div class="row">
-                        <div *ngIf="order[0].process_step === process2 || order[0].process_step === process3 || order[0].process_step === process4 || order[0].process_step === process5" >
+                        <div *ngIf="order[0].process_step === process2 || order[0].process_step === process3 || order[0].process_step === process4 || order[0].process_step === process5">
                             <div class="date-step">
                                 Entered step:<br>
                                 {{order[0].clean_order_date}}
                             </div>
                         </div>
-                        <div [class.selected]="process2 === order[0].process_step" class="process-step">{{process2}}</div>
+                        <div [class.selected]="process2 === order[0].process_step" class="process-step">{{process2}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,13 +44,14 @@
                 <div class="col-md-5"></div>
                 <div class="col-md-2 process-group">
                     <div class="row">
-                        <div *ngIf="order[0].process_step === process3 ||order[0].process_step === process4 || order[0].process_step === process5" >
+                        <div *ngIf="order[0].process_step === process3 ||order[0].process_step === process4 || order[0].process_step === process5">
                             <div class="date-step">
                                 Entered step:<br>
                                 {{order[0].plan_done_date}}
                             </div>
                         </div>
-                        <div [class.selected]="process3 === order[0].process_step" class="process-step">{{process3}}</div>
+                        <div [class.selected]="process3 === order[0].process_step" class="process-step">{{process3}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -55,13 +59,14 @@
                 <div class="col-md-7"></div>
                 <div class="col-md-2 process-group">
                     <div class="row">
-                        <div *ngIf="order[0].process_step === process4 || order[0].process_step === process5" >
+                        <div *ngIf="order[0].process_step === process4 || order[0].process_step === process5">
                             <div class="date-step">
                                 Entered step:<br>
                                 {{order[0].finalize_access_date}}
                             </div>
                         </div>
-                        <div [class.selected]="process4 === order[0].process_step" class="process-step">{{process4}}</div>
+                        <div [class.selected]="process4 === order[0].process_step" class="process-step">{{process4}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,13 +74,14 @@
                 <div class="col-md-9"></div>
                 <div class="col-md-2 process-group">
                     <div class="row">
-                        <div *ngIf="order[0].process_step === process5" >
+                        <div *ngIf="order[0].process_step === process5">
                             <div class="date-step">
                                 Entered step:<br>
                                 {{order[0].FM_date}}
                             </div>
                         </div>
-                        <div [class.selected]="process5 === order[0].process_step" class="process-step">{{process5}}</div>
+                        <div [class.selected]="process5 === order[0].process_step" class="process-step">{{process5}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,3 +132,4 @@
 <div *ngIf="error">
     <div class="alert alert-danger" role="alert">No Orders to show. Please check your URL or try to refresh page</div>
 </div>
+

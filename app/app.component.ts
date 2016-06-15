@@ -10,11 +10,14 @@ import { SearchComponent } from './search.component';
 @Component({
     selector: 'order-app',
     template:  `
-    <div class="navbar">
+    <div class="navbar" id="nav-header">
     <img src="/img/bn_logo.png" alt="" class="pull-right" id="BN-logo" />
         <h2 class="navbar-inner">{{title}}</h2>
     </div>
+                <div class="container">
                 <router-outlet></router-outlet>
+                </div>
+                
                 <nav class="navbar navbar-default navbar-fixed-bottom">
                 <div id="footer">Information Updated: {{information}}</div>
                 </nav>

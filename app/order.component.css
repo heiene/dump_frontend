@@ -1,11 +1,6 @@
-#order-body{
-    padding-left: 20em;
-    padding-right: 20em;
-}
-
 .btn{
     font-weight: bold;
-    color: darkgrey;
+    color: #979797;
 }
 
 .btn:hover{
@@ -22,7 +17,7 @@
 #process-table-header {
     background-color: #f5f5f5;
     text-align: center;
-    color: darkgrey;
+    color: #979797;
 }
 
 #process-table-body td{
@@ -30,13 +25,13 @@
 }
 
 .panel {
-    min-width: 16em;
+    min-width: 18em;
 
 }
 
 .panel-heading{
     text-align: center;
-    color: darkgrey;
+    color: #979797;
     font-weight: bold;
 }
 
@@ -45,6 +40,8 @@
     max-width: 16em;
     min-height: 8em;
     max-height: 8em;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .process-step {
@@ -54,7 +51,7 @@
     line-height: 8em;
     border-radius: 50%;
     text-align: center;
-    color: darkgrey;
+    color: #979797;
     min-width: 8em;
     max-width: 8em;
     float: right;
@@ -66,7 +63,7 @@
     min-height: 8em;
     align-content: center;
     padding-top: 3em;
-    color: lightgray;
+    color: #878787;
     font-size: small;
     font-style: italic;
     min-width: 7em;
@@ -75,7 +72,7 @@
 }
 
 td{
-    color: darkgrey;
+    color: #737373;
 }
 
 .additional-info td:first-child {

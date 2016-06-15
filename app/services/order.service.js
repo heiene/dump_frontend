@@ -24,7 +24,7 @@ var OrderService = (function () {
             prod: {}
         };
         //  private port;
-        this.baseUrl = this.environment.dev.baseUrl; //change this to test for AWS
+        this.baseUrl = this.environment.test.baseUrl; //change this to test for AWS
         this.orderUrl = this.baseUrl + 'order/';
         this.customerUrl = this.baseUrl + 'customer/';
     }
