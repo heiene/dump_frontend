@@ -15,13 +15,12 @@
 .selected {
     background-color: #68b4bd !important;
     color: white !important;
-}
-#process-table-header {
-    text-align: center;
-    color: darkgrey;
+    font-weight: bold;
 }
 
-#process-table-header2 {
+
+#process-table-header {
+    background-color: #f5f5f5;
     text-align: center;
     color: darkgrey;
 }
@@ -30,39 +29,50 @@
     text-align: center;
 }
 
-.process-group {
-    border: dotted pink 2px;
+.panel {
     min-width: 16em;
-    min-height: 7em;
-    max-height: 7em;
+
 }
 
-#process-panel {
-    min-width: 16em;
+.panel-heading{
+    text-align: center;
+    color: darkgrey;
+    font-weight: bold;
 }
+
+.process-group {
+    min-width: 16em;
+    max-width: 16em;
+    min-height: 8em;
+    max-height: 8em;
+}
+
 .process-step {
     border: 1px solid lightgrey;
-    height: 7em;
-    min-height: 7em;
-    line-height: 7em;
+    height: 8em;
+    min-height: 8em;
+    line-height: 8em;
     border-radius: 50%;
     text-align: center;
     color: darkgrey;
-    min-width: 7em;
+    min-width: 8em;
+    max-width: 8em;
+    float: right;
 }
 
 .date-step {
     background: white;
-    height: 7em;
-    min-height: 7em;
-    line-height: 7em;
-    color: grey;
+    height: 8em;
+    min-height: 8em;
+    align-content: center;
+    padding-top: 3em;
+    color: lightgray;
+    font-size: small;
     font-style: italic;
     min-width: 7em;
+    float: left;
 
 }
-
-
 
 td{
     color: darkgrey;
@@ -72,7 +82,3 @@ td{
     font-weight: bold;
 }
 
-.panel-heading{
-    color: darkgrey;
-    font-weight: bold;
-}
