@@ -19,6 +19,8 @@ export class CustomerComponent implements OnInit {
     }
 
     ngOnInit() {
+        
+        /* Not secured 
         if (this.routeParams.get('id') !== null) {
 
             let id = this.routeParams.get('id');
@@ -44,7 +46,37 @@ export class CustomerComponent implements OnInit {
 
         } else {
             console.log('something wrong in customerGettings');
+        }*/
+
+        console.log('Router params', this.routeParams.get('id'));
+
+        if (this.routeParams.get('id') !== null) {
+
+            let id = this.routeParams.get('id');
+            console.log("getting orders for customer:", id);
+
+            this.orderService.getEncryptedData(id).subscribe(
+                data => {
+                    if(data.json().length>0) {
+                        this.error = false;
+                        this.customerData = data.json();
+                        console.log("lengde", this.customerData.length);
+                        console.log("data", this.customerData)
+                    } else {
+                        console.log("Error in getting customer");
+                        this.error = true;
+                    }
+                },
+                err => console.error(err),
+                () => {
+                    console.log('get customer details completed', JSON.stringify(this.customerData[0]));
+                }
+            );
+
+        } else {
+            console.log('something wrong in customerGettings');
         }
+        
     }
 
     gotoOrderDetail(order_ref){

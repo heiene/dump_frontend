@@ -24,11 +24,39 @@ var OrderComponent = (function () {
         this.process5 = 'Delivered';
     }
     OrderComponent.prototype.ngOnInit = function () {
+        /* not encrupted version
+        if (this.routeParams.get('id') !== null) {
+         
+
+            let id = this.routeParams.get('id');
+            console.log("getting order for:", id);
+
+            this.orderService.getOrder(id).subscribe(
+                    data => {
+                        if(data.json().length>0) {
+                            this.error = false;
+                            this.order = data.json();
+                        }
+                        else {
+                            console.log("No Orders returned");
+                            this.error = true;
+                        }
+
+                },
+                    err => console.error('ERROR:',err),
+                () => {
+                    console.log('get order completed', this.order);
+                }
+            );
+
+        } else {
+            console.log('something wrong in ordergetting');
+        }*/
         var _this = this;
         if (this.routeParams.get('id') !== null) {
             var id = this.routeParams.get('id');
             console.log("getting order for:", id);
-            this.orderService.getOrder(id).subscribe(function (data) {
+            this.orderService.getEncryptedData(id).subscribe(function (data) {
                 if (data.json().length > 0) {
                     _this.error = false;
                     _this.order = data.json();
@@ -42,7 +70,7 @@ var OrderComponent = (function () {
             });
         }
         else {
-            console.log('something wrong in ordergettingz');
+            console.log('something wrong in ordergetting');
         }
     };
     OrderComponent.prototype.goToCustomer = function (customer_id) {

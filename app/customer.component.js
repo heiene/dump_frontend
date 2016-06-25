@@ -19,11 +19,39 @@ var CustomerComponent = (function () {
         this.error = false;
     }
     CustomerComponent.prototype.ngOnInit = function () {
+        /* Not secured
+        if (this.routeParams.get('id') !== null) {
+
+            let id = this.routeParams.get('id');
+            console.log("getting orders for customer:", id);
+
+            this.orderService.getOrdersByCustomerId(id).subscribe(
+                    data => {
+                        if(data.json().length>0) {
+                            this.error = false;
+                            this.customerData = data.json();
+                            console.log("lengde", this.customerData.length);
+                            console.log("data", this.customerData)
+                        } else {
+                            console.log("Error in getting customer");
+                            this.error = true;
+                        }
+                },
+                    err => console.error(err),
+                () => {
+                    console.log('get customer details completed', JSON.stringify(this.customerData[0]));
+                }
+            );
+
+        } else {
+            console.log('something wrong in customerGettings');
+        }*/
         var _this = this;
+        console.log('Router params', this.routeParams.get('id'));
         if (this.routeParams.get('id') !== null) {
             var id = this.routeParams.get('id');
             console.log("getting orders for customer:", id);
-            this.orderService.getOrdersByCustomerId(id).subscribe(function (data) {
+            this.orderService.getEncryptedData(id).subscribe(function (data) {
                 if (data.json().length > 0) {
                     _this.error = false;
                     _this.customerData = data.json();

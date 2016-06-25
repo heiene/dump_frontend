@@ -19,9 +19,10 @@ export class OrderService {
     };
 
   //  private port;
-    private baseUrl     = this.environment.test.baseUrl; //change this to test for AWS
+    private baseUrl     = this.environment.dev.baseUrl; //change this to test for AWS
     private orderUrl    = this.baseUrl + 'order/';
     private customerUrl = this.baseUrl + 'customer/';
+    private encryptUrl  = this.baseUrl + 'encrypt/';
 
     constructor(private http: Http) { }
 
@@ -35,5 +36,9 @@ export class OrderService {
 
     getLastUpdate() {
         return this.http.get(this.baseUrl)
+    }
+
+    getEncryptedData(token) {
+        return this.http.get(this.encryptUrl+token)
     }
 }

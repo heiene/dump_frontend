@@ -1,4 +1,6 @@
 <div *ngIf="order" id="order-body">
+
+    <!-- Tar vekk denne for prodsetting, ikke sikker
     <div>
         <button class="btn btn-default" (click)="goToCustomer(order[0].customer_id)">View all orders for customer
         </button>
@@ -6,7 +8,7 @@
 
     <br/>
 
-
+    -->
     <div class="panel panel-default">
         <div class="panel-heading" id="process-table-header">
             Process Flow for order: <strong>{{order[0].order_ref}}</strong> - Current step

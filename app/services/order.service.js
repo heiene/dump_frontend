@@ -24,9 +24,10 @@ var OrderService = (function () {
             prod: {}
         };
         //  private port;
-        this.baseUrl = this.environment.test.baseUrl; //change this to test for AWS
+        this.baseUrl = this.environment.dev.baseUrl; //change this to test for AWS
         this.orderUrl = this.baseUrl + 'order/';
         this.customerUrl = this.baseUrl + 'customer/';
+        this.encryptUrl = this.baseUrl + 'encrypt/';
     }
     OrderService.prototype.getOrder = function (id) {
         return this.http.get(this.orderUrl + id);
@@ -36,6 +37,9 @@ var OrderService = (function () {
     };
     OrderService.prototype.getLastUpdate = function () {
         return this.http.get(this.baseUrl);
+    };
+    OrderService.prototype.getEncryptedData = function (token) {
+        return this.http.get(this.encryptUrl + token);
     };
     OrderService = __decorate([
         core_1.Injectable(), 
